@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Order Product</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f9eadf;
+text-align:center;
+padding-top:50px;
+}
+
+.box{
+background:white;
+padding:20px;
+width:300px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,select,button{
+width:100%;
+padding:8px;
+margin:5px 0;
+}
+
+button{
+background:pink;
+border:none;
+cursor:pointer;
+}
+
+h2{
+margin-bottom:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Order Form</h2>
+
+<form action="commande_produit.php" method="POST">
+
+<input type="hidden" name="vendeur" >
+
+<input type="hidden" name="prix" >
+
+<input type="hidden" name="ref" >
+
+<select name="color" required>
+<option value="Gold">Gold</option>
+<option value="Silver">Silver</option>
+<option value="Black">Black</option>
+<option value="Pink">Pink</option>
+</select>
+
+<select name="quantity" required>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+
+<button type="submit">Order</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

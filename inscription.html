@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tables</title>
+  <link rel="stylesheet" href="css ins.css">
+</head>
+
+<body>
+
+<div class="form-container">
+<form id="signupForm"action="inscriptionn.php" method="POST">
+
+<table align="center">
+
+<tr>
+<td>Name</td>
+<td><input type="text" id="name"></td>
+</tr>
+
+<tr>
+<td>Last name</td>
+<td><input type="text" id="last_name"></td>
+</tr>
+
+<tr>
+<td>Age</td>
+<td><input type="number" id="age"></td>
+</tr>
+
+<tr>
+<td>Wilaya</td>
+<td>
+<select id="wilaya">
+<option value="">Select</option>
+<option value="1">Setif</option>
+<option value="2">Alger</option>
+<option value="3">Constantine</option>
+<option value="4">Oran</option>
+<option value="5">Annaba</option>
+<option value="6">Batna</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td><input type="tel" id="phone"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email" id="email"></td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td><input type="text" id="address"></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" id="password"></td>
+</tr>
+
+<tr>
+<td>Confirm Password</td>
+<td><input type="password" id="confirm_password"></td>
+</tr>
+
+<tr>
+<td>Sex</td>
+<td>
+<input type="radio" name="sex" value="woman"> Woman
+<input type="radio" name="sex" value="man"> Man
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+<button type="submit">Send</button>
+<button type="reset">Erase</button>
+<p>Already have an account? <a href="Login-page.html">Login</a></p>
+</td>
+</tr>
+
+</table>
+
+</form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("signupForm");
+
+  form.addEventListener("submit", function (e) {
+  
+
+    const name = document.getElementById("name").value.trim();
+    const lastName = document.getElementById("last_name").value.trim();
+    const age = parseInt(document.getElementById("age").value);
+    const wilaya = document.getElementById("wilaya").value;
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm_password").value;
+    const gender = document.querySelector('input[name="sex"]:checked');
+
+    if (
+      name === "" ||
+      lastName === "" ||
+      isNaN(age) ||
+      age < 17 ||
+      age > 100 ||
+     
+      phone.length !== 10 ||
+      !/^\d+$/.test(phone) ||
+      email === "" ||
+      address === "" ||
+      !gender
+    ) {
+      alert(" Error, try again");
+      return;
+    }
+    if (password.length < 8) {
+      alert(" Password must be at least 8 characters");
+      return;
+    }
+    if (wilaya ==="") {
+
+
+      alert(" select the wilaya");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert(" Passwords do not match");
+      return;
+    }
+
+ alert(" Login successful");
+    form.submit();
+  });
+
+});
+</script>
+
+</body>
+</html>

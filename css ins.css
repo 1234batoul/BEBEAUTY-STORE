@@ -1,0 +1,23 @@
+body{
+background-color:#f9eadf;
+padding:20px;
+cursor:pointer;
+}
+table
+{
+border:2px #f9eadf;
+border-radius:20px;
+border-collapse :collapse ;
+border-spacing:hidden;
+overflow: hidden;
+margin: auto;
+padding:20px 50px;
+cursor:pointer;
+}
+td,
+tr{
+background-color:#fff;
+padding:10px 10px;
+cursor:pointer;
+}
+ 

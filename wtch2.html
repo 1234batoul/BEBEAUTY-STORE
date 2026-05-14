@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css ins.css">
+<title>index</title>
+
+<style>
+img{
+  width: 200px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+img:hover{
+  transform: scale(1.2);
+  filter: brightness(0.8);
+}
+</style>
+</head>
+
+<body>
+
+<form action="commande_produit.php" method="POST">
+
+<!-- hidden inputs -->
+<input type="hidden" name="vendeur" value="Bbeauty">
+<input type="hidden" name="prix" value="6500">
+<input type="hidden" name="ref" value="000007">
+
+<table width="50%">
+
+<tr>
+<td rowspan="7">
+<img src="https://i.pinimg.com/474x/b1/be/45/b1be456a9e8f72afb8d842a4fa658a74.jpg">
+</td>
+
+<td>vendeur:</td>
+<td>Bbeauty</td>
+</tr>
+
+<tr>
+<td>prix:</td>
+<td>6500 DA</td>
+</tr>
+
+<tr>
+<td>ref:</td>
+<td>000007</td>
+</tr>
+
+<tr>
+<td>color:</td>
+<td>
+<select name="color">
+<option value="black">Black</option>
+<option value="white">White</option>
+<option value="pink">Pink</option>
+<option value="light green">Light Green</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>quantity:</td>
+<td>
+<select name="quantity">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+<button type="submit">Order</button>
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
